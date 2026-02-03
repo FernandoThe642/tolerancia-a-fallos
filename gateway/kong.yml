@@ -1,0 +1,19 @@
+_format_version: "3.0"
+
+services:
+  # Configuración del Servicio de Reservas
+  - name: servicio-reservas
+    url: http://host.docker.internal:8080
+    routes:
+      - name: ruta-reservas
+        paths:
+          - /reservas
+        strip_path: false
+
+plugins:
+  # Protección contra el Diluvio de Peticiones (Rate Limiting)
+  - name: rate-limiting
+    config:
+      minute: 5        # Solo se permite 5 peticiones por minuto
+      policy: local
+      hide_client_headers: false

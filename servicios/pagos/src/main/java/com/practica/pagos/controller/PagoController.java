@@ -12,7 +12,7 @@ public class PagoController {
     public String procesar() throws InterruptedException {
 
         // Simulación de pasarela Lenta
-        Thread.sleep(20000);
+        //Thread.sleep(20000);
 
         System.out.println("Pago recibido y procesado");
         return "Pago Exitoso";

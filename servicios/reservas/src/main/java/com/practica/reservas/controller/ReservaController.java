@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.concurrent.CompletableFuture;
 
 @RestController
-@RequestMapping("/reservas")
 public class ReservaController {
 
     @Autowired
@@ -17,7 +16,7 @@ public class ReservaController {
 
 // Endpoint para probar el flujo completo con resiliencia
 // http://localhost:8080/reservas/comprar
-    @GetMapping("/comprar")
+    @GetMapping("/reservas/comprar")
 
     public CompletableFuture<String> probarCompra() {
         return reservaService.realizarCompraCompleta();
